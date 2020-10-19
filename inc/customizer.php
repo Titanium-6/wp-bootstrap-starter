@@ -89,28 +89,6 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
         )
     ) ) );
 
-
-    /*$wp_customize->add_setting( 'preset_color_scheme_setting', array(
-        'default'   => 'default',
-        'type'       => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_color_scheme_setting', array(
-        'label' => __( 'Color Scheme', 'wp-bootstrap-starter' ),
-        'section'    => 'typography',
-        'settings'   => 'preset_color_scheme_setting',
-        'type'    => 'select',
-        'choices' => array(
-            'default' => 'Default',
-            'red' => 'Red',
-            'green' => 'Green',
-            'orange' => 'Orange',
-            'pink' => 'Pink',
-        )
-    ) ) );*/
-
-
     /*Banner*/
     $wp_customize->add_section(
         'header_image',
@@ -119,7 +97,6 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             'priority' => 30,
         )
     );
-
 
     $wp_customize->add_control(
         'header_img',
@@ -182,7 +159,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
 
 
     //Site Name Text Color
-   $wp_customize->add_section(
+    $wp_customize->add_section(
         'site_name_text_color',
         array(
             'title' => __( 'Other Customizations', 'wp-bootstrap-starter' ),
@@ -208,27 +185,6 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             'panel' => 'styling_option_panel',
         )
     );
-
-    // Bootstrap and Fontawesome Option
-    $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-bootstrap-starter' ),
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-    ) );
-    $wp_customize->add_control( 
-        'cdn_assets',
-        array(
-            'label' => __( 'Use CDN for Assets', 'wp-bootstrap-starter' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bootstrap-starter' ),
-            'section' => 'site_name_text_color',
-            'settings' => 'cdn_assets_setting',
-	        'type'    => 'select',
-	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-bootstrap-starter' ),
-	            'no' => __( 'No', 'wp-bootstrap-starter' ),
-        	)
-        )
-    );
-
 
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
