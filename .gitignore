@@ -1,0 +1,14 @@
+*.htpasswd
+*.komodoproject
+*.pid
+*.sql
+*.sql.gz
+*.sublime-project
+*.sublime-workspace
+*.tar.gz
+*.zip
+.ftpconfig
+error_log
+sftp-config.json
+sftp.json
+wp-config.php
